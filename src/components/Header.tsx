@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
 
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -39,11 +40,14 @@ const Header: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
+              <div className="flex items-center space-x-2">
+                <img src="public/tooth_icon.jpg" className='object-contain h-16 w-16 mr-[-10px]' />
+                <h1 className="flex flex-col text-3xl font-bold bg-gradient-to-r from-blue-800 to-indigo-400 bg-clip-text text-transparent leading-tight">
+                  <span className='mb-[-14px]'>Dentist</span>
+                  <span className="pl-[3.4ch] text-xl">@Lodhran</span>
+                </h1>
+              </div>
                     
-              <h1 className="flex flex-col text-3xl font-bold bg-gradient-to-r from-teal-700 to-red-500 bg-clip-text text-transparent leading-tight">
-                <span className='mb-[-14px]'>Dentist</span>
-                <span className="pl-[3.4ch] text-xl">@Lodhran</span>
-              </h1>
             </div>
             
             {/* Desktop Menu */}
@@ -63,9 +67,6 @@ const Header: React.FC = () => {
                 </button>
                 <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-teal-600 px-3 py-2 text-sm font-medium transition-colors">
                   Contact
-                </button>
-                <button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-all duration-300 shadow-md">
-                  Book Appointment
                 </button>
               </div>
             </nav>
@@ -100,9 +101,6 @@ const Header: React.FC = () => {
               </button>
               <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-teal-600 block px-3 py-2 text-base font-medium w-full text-left">
                 Contact
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white block px-3 py-2 mx-3 rounded-md text-base font-medium hover:from-teal-600 hover:to-cyan-600 transition-all duration-300 text-center shadow-md">
-                Book Appointment
               </button>
             </div>
           </div>

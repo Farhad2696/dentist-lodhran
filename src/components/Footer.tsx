@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-teal-400 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">Bin Qasim Street, Near Gulaab Marble Factory<br />Lodhran, Punjab 59320<br />Pakistan</span>
+                <span className="text-gray-300 text-sm">Bin Qasim Street, Near Gulaab Marble Factory<br />Lodhran, Punjab <br />Pakistan</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={16} className="text-teal-400 flex-shrink-0" />
