@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { CLINIC_GALLERY, clinicImageUrl } from '../clinicImages';
+import { BRAND_NAME_PLAIN } from './BrandName';
 
 const Gallery: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -11,7 +12,7 @@ const Gallery: React.FC = () => {
       CLINIC_GALLERY.map((item, index) => ({
         src: clinicImageUrl(item.file),
         title: item.title,
-        alt: `Dentist@Lodhran — ${item.caption} (photo ${index + 1} of ${CLINIC_GALLERY.length})`,
+        alt: `${BRAND_NAME_PLAIN} — ${item.caption} (photo ${index + 1} of ${CLINIC_GALLERY.length})`,
         caption: item.caption,
       })),
     []

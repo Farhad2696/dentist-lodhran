@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
 import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../contactInfo';
 import { WhatsAppIcon } from './WhatsAppIcon';
+import { BrandName } from './BrandName';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,9 +57,7 @@ const Header: React.FC = () => {
           <div className="flex justify-between items-center h-[4.25rem]">
             <div className="flex-shrink-0">
               <h1 className="text-xl sm:text-2xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-teal-800 to-teal-600 bg-clip-text text-transparent">
-                  Dentist@Lodhran
-                </span>
+                <BrandName variant="header" />
               </h1>
               <p className="text-xs text-slate-500 font-medium tracking-wide uppercase mt-0.5">
                 Dental clinic

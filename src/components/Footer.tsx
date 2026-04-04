@@ -1,7 +1,9 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
-import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../contactInfo';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import { EMAIL, PHONE_DISPLAY, PHONE_TEL, TIKTOK_URL, WHATSAPP_URL } from '../contactInfo';
+import { TikTokIcon } from './TikTokIcon';
 import { WhatsAppIcon } from './WhatsAppIcon';
+import { BrandName } from './BrandName';
 
 const Footer: React.FC = () => {
   return (
@@ -10,8 +12,8 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Clinic Info */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent tracking-tight">
-              Dentist@Lodhran
+            <h3 className="text-2xl font-bold mb-2 tracking-tight">
+              <BrandName variant="footer" />
             </h3>
             <p className="text-xs uppercase tracking-widest text-slate-500 mb-4">Dental clinic</p>
             <p className="text-gray-300 mb-6 leading-relaxed text-[15px]">
@@ -29,14 +31,15 @@ const Footer: React.FC = () => {
               >
                 <WhatsAppIcon size={20} />
               </a>
-              <a href="#" className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 p-2 rounded-full transition-all duration-300 hover:scale-110">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 p-2 rounded-full transition-all duration-300 hover:scale-110">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 p-2 rounded-full transition-all duration-300 hover:scale-110">
-                <Twitter size={20} />
+              <a
+                href={TIKTOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-slate-800 hover:bg-slate-700 p-2 rounded-full transition-all duration-300 hover:scale-110 text-white ring-1 ring-white/10"
+                title="TikTok @thedentistforu"
+                aria-label="TikTok @thedentistforu"
+              >
+                <TikTokIcon size={20} />
               </a>
             </div>
           </div>
@@ -83,7 +86,12 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-teal-400 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">info@dentistlodhran.com</span>
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="text-gray-300 text-sm hover:text-teal-400 transition-colors break-all"
+                >
+                  {EMAIL}
+                </a>
               </div>
             </div>
           </div>
@@ -92,7 +100,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2026 Dentist@Lodhran. All rights reserved.
+              © 2026 <BrandName variant="footerCopyright" />. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm mt-2 md:mt-0 text-center md:text-right">
               Professional care · Modern equipment · Experienced team

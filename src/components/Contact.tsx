@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock, Navigation } from 'lucide-react';
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../contactInfo';
+import { BRAND_NAME_PLAIN } from './BrandName';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
 const Contact: React.FC = () => {
@@ -122,7 +123,7 @@ const Contact: React.FC = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Dentist@Lodhran on Google Maps"
+                  title={`${BRAND_NAME_PLAIN} on Google Maps`}
                 />
               </div>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { CLINIC_HERO_IMAGE } from '../clinicImages';
+import { BrandName } from './BrandName';
 
 const Hero: React.FC = () => {
   const scrollToContact = () => {
@@ -27,8 +28,8 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-200/90 mb-4">
-            Dentist@Lodhran
+          <p className="text-sm font-semibold tracking-[0.12em] mb-4">
+            <BrandName variant="hero" />
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
             Your smile is our

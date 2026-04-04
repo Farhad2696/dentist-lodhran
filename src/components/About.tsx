@@ -1,6 +1,7 @@
 import React from 'react';
 import { Users, Award, Clock, Heart } from 'lucide-react';
 import { CLINIC_HERO_IMAGE } from '../clinicImages';
+import { BrandName, BRAND_NAME_PLAIN } from './BrandName';
 
 const About: React.FC = () => {
   const stats = [
@@ -16,7 +17,7 @@ const About: React.FC = () => {
         <div className="text-center mb-16">
           <p className="text-sm font-semibold uppercase tracking-widest text-teal-700 mb-3">About us</p>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-            About Dentist@Lodhran
+            About <BrandName variant="about" />
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-6 rounded-full" />
           <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -29,7 +30,7 @@ const About: React.FC = () => {
           <div>
             <img
               src={CLINIC_HERO_IMAGE}
-              alt="Dentist@Lodhran dental clinic interior"
+              alt={`${BRAND_NAME_PLAIN} dental clinic interior`}
               className="rounded-lg shadow-xl w-full h-96 object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
@@ -38,7 +39,7 @@ const About: React.FC = () => {
               Modern Dental Care in Lodhran
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              At Dentist@Lodhran, we combine cutting-edge dental technology with personalized care to ensure every patient receives the best possible treatment. Our team of experienced professionals is dedicated to making your dental experience comfortable and effective.
+              At {BRAND_NAME_PLAIN}, we combine cutting-edge dental technology with personalized care to ensure every patient receives the best possible treatment. Our team of experienced professionals is dedicated to making your dental experience comfortable and effective.
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
               We specialize in preventive, restorative, and cosmetic dentistry, using the latest techniques and equipment to deliver outstanding results. Your oral health is our passion, and your comfort is our priority.
