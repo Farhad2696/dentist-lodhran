@@ -37,7 +37,7 @@ const Services: React.FC = () => {
       icon: Users,
       title: 'Family Dentistry',
       description: 'Comprehensive dental care for the entire family under one roof.',
-      features: ['All Ages Welcome', 'Family Packages', 'Flexible Scheduling', 'Insurance Accepted']
+      features: ['All Ages Welcome', 'Family Packages', 'Convenient Hours', 'Insurance Accepted']
     }
   ];
 
@@ -45,12 +45,13 @@ const Services: React.FC = () => {
     <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Our Dental Services
+          <p className="text-sm font-semibold uppercase tracking-widest text-teal-700 mb-3">Services</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+            Our dental services
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive dental care services designed to meet all your oral health needs.
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-6 rounded-full" />
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Preventive, restorative, and cosmetic care—from routine visits to advanced treatment.
           </p>
         </div>
 

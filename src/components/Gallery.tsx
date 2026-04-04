@@ -1,42 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { CLINIC_GALLERY, clinicImageUrl } from '../clinicImages';
 
 const Gallery: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  const images = [
-    {
-      src: 'https://images.pexels.com/photos/3779697/pexels-photo-3779697.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Modern dental office reception area',
-      title: 'Reception Area'
-    },
-    {
-      src: 'https://images.pexels.com/photos/3779700/pexels-photo-3779700.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'State-of-the-art dental treatment room',
-      title: 'Treatment Room'
-    },
-    {
-      src: 'https://images.pexels.com/photos/3845457/pexels-photo-3845457.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Advanced dental equipment',
-      title: 'Advanced Equipment'
-    },
-    {
-      src: 'https://images.pexels.com/photos/3779701/pexels-photo-3779701.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Comfortable patient waiting area',
-      title: 'Waiting Area'
-    },
-    {
-      src: 'https://images.pexels.com/photos/3779705/pexels-photo-3779705.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Professional dental consultation',
-      title: 'Consultation Room'
-    },
-    {
-      src: 'https://images.pexels.com/photos/3845456/pexels-photo-3845456.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Sterilization and safety equipment',
-      title: 'Sterilization Area'
-    }
-  ];
+  const images = useMemo(
+    () =>
+      CLINIC_GALLERY.map((item, index) => ({
+        src: clinicImageUrl(item.file),
+        title: item.title,
+        alt: `Dentist@Lodhran — ${item.caption} (photo ${index + 1} of ${CLINIC_GALLERY.length})`,
+        caption: item.caption,
+      })),
+    []
+  );
 
   // Auto-advance carousel every 4 seconds
   useEffect(() => {
@@ -45,7 +24,7 @@ const Gallery: React.FC = () => {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images]);
 
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % images.length);
@@ -64,12 +43,13 @@ const Gallery: React.FC = () => {
     <section id="gallery" className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Our Clinic Gallery
+          <p className="text-sm font-semibold uppercase tracking-widest text-teal-700 mb-3">Gallery</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+            Our clinic
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Take a virtual tour of our modern, comfortable dental facility.
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-6 rounded-full" />
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            A look at our reception, treatment areas, and equipment—designed for comfort and safety.
           </p>
         </div>
 
@@ -84,7 +64,7 @@ const Gallery: React.FC = () => {
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
               <h3 className="text-white text-2xl font-bold">{images[currentImage].title}</h3>
-              <p className="text-white/90">{images[currentImage].alt}</p>
+              <p className="text-white/90">{images[currentImage].caption}</p>
             </div>
           </div>
           
@@ -117,7 +97,7 @@ const Gallery: React.FC = () => {
         </div>
 
         {/* Thumbnail Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 md:gap-4">
           {images.map((image, index) => (
             <div
               key={index}

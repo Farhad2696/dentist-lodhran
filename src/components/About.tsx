@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, Award, Clock, Heart } from 'lucide-react';
+import { CLINIC_HERO_IMAGE } from '../clinicImages';
 
 const About: React.FC = () => {
   const stats = [
@@ -13,20 +14,22 @@ const About: React.FC = () => {
     <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-teal-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <p className="text-sm font-semibold uppercase tracking-widest text-teal-700 mb-3">About us</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
             About Dentist@Lodhran
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Providing exceptional dental care to the Lodhran community with state-of-the-art technology and compassionate service.
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-6 rounded-full" />
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Serving Lodhran with modern dentistry, clear communication, and care tailored to each
+            patient.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <img
-              src="https://images.pexels.com/photos/3845457/pexels-photo-3845457.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Modern dental clinic interior"
+              src={CLINIC_HERO_IMAGE}
+              alt="Dentist@Lodhran dental clinic interior"
               className="rounded-lg shadow-xl w-full h-96 object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
