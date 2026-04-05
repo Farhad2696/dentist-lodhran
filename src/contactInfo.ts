@@ -5,7 +5,7 @@ export const PHONE_TEL = '+923002506450';
 const PHONE_WA_DIGITS = '923002506450';
 
 const defaultWhatsAppText =
-  'السلام علیکم، میں اپائنٹمنٹ اور علاج کے بارے میں معلومات لینا چاہتا/چاہتی ہوں۔';
+  'السلام علیکم، میں اپائنٹمنٹ اور علاج کے بارے میں معلومات درکار ہے۔';
 
 /** Opens WhatsApp chat with this number (app or web) */
 export const WHATSAPP_URL = `https://wa.me/${PHONE_WA_DIGITS}?text=${encodeURIComponent(defaultWhatsAppText)}`;
