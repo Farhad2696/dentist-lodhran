@@ -4,7 +4,8 @@ export const PHONE_TEL = '+923002506450';
 /** E.164 without + — required for wa.me */
 const PHONE_WA_DIGITS = '923002506450';
 
-const defaultWhatsAppText = 'Hello, I would like to inquire about Dentist In Lodhran.';
+const defaultWhatsAppText =
+  'السلام علیکم، میں اپائنٹمنٹ اور علاج کے بارے میں معلومات لینا چاہتا/چاہتی ہوں۔';
 
 /** Opens WhatsApp chat with this number (app or web) */
 export const WHATSAPP_URL = `https://wa.me/${PHONE_WA_DIGITS}?text=${encodeURIComponent(defaultWhatsAppText)}`;
