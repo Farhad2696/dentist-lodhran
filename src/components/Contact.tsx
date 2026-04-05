@@ -1,6 +1,13 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock, Navigation } from 'lucide-react';
-import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../contactInfo';
+import {
+  EMAIL,
+  GOOGLE_MAPS_EMBED_URL,
+  GOOGLE_MAPS_URL,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  WHATSAPP_URL,
+} from '../contactInfo';
 import { BRAND_NAME_PLAIN } from './BrandName';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
@@ -116,7 +123,7 @@ const Contact: React.FC = () => {
               <h4 className="font-semibold text-slate-900 mb-3">Location</h4>
               <div className="w-full h-64 md:h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md ring-1 ring-slate-200/80">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3555.306076885137!2d71.644412!3d29.534863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1726951234567"
+                  src={GOOGLE_MAPS_EMBED_URL}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -161,7 +168,7 @@ const Contact: React.FC = () => {
                   Email us
                 </a>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=29.534863,71.644412"
+                  href={GOOGLE_MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-xl text-teal-800 font-medium hover:bg-teal-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2"
