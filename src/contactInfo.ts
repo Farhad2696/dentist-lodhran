@@ -9,7 +9,7 @@ const defaultWhatsAppText = 'Hello, I would like to inquire about Dentist In Lod
 /** Opens WhatsApp chat with this number (app or web) */
 export const WHATSAPP_URL = `https://wa.me/${PHONE_WA_DIGITS}?text=${encodeURIComponent(defaultWhatsAppText)}`;
 
-export const EMAIL = 'Rashidbinmaqbool@gmail.com';
+export const EMAIL = 'DentistInLodhran@gmail.com';
 
 /** Official TikTok profile */
 export const TIKTOK_URL = 'https://www.tiktok.com/@thedentistforu';
