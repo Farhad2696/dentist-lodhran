@@ -46,7 +46,7 @@ const Header: React.FC = () => {
           </div>
           <div className="flex items-center space-x-1">
             <Clock size={14} />
-            <span>Mon-Sat: 9AM-9PM</span>
+            <span>24 Hours</span>
           </div>
         </div>
       </div>
